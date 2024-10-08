@@ -5,14 +5,10 @@ import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
 import 'firebase_options.dart';
 
-
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -20,15 +16,9 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -42,19 +32,54 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCoIG5QDtwfePSWyYQWOBZQgMLy3RPetc4',
-    appId: '1:429645705382:android:9f0f8af5edb9341147c467',
-    messagingSenderId: '429645705382',
-    projectId: 'se-bu-passport',
-    storageBucket: 'se-bu-passport.appspot.com',
+    apiKey: 'AIzaSyCBCjFWoGtTBsiGuKoa_05i0WTyhXdCT0U',
+    appId: '1:368645643837:android:9762661e16a81671965454',
+    messagingSenderId: '368645643837',
+    projectId: 'crypto-monolith-417321',
+    databaseURL: 'https://crypto-monolith-417321-default-rtdb.firebaseio.com',
+    storageBucket: 'crypto-monolith-417321.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDB-0rxfn8BysrqjdSsWddOiJseJlvvIyo',
-    appId: '1:429645705382:ios:df49216a57278e0b47c467',
-    messagingSenderId: '429645705382',
-    projectId: 'se-bu-passport',
-    storageBucket: 'se-bu-passport.appspot.com',
+    apiKey: 'AIzaSyDXsPaxbE1eKQzUK3Sdt_vgAznUenKA07M',
+    appId: '1:368645643837:ios:259eeb31aac82760965454',
+    messagingSenderId: '368645643837',
+    projectId: 'crypto-monolith-417321',
+    databaseURL: 'https://crypto-monolith-417321-default-rtdb.firebaseio.com',
+    storageBucket: 'crypto-monolith-417321.appspot.com',
     iosBundleId: 'com.example.buPassport',
   );
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyDuaxN5z_6MxE0C6u-aVM0iA-lYVejmygo',
+    appId: '1:368645643837:web:0c7de7191eb84a8a965454',
+    messagingSenderId: '368645643837',
+    projectId: 'crypto-monolith-417321',
+    authDomain: 'crypto-monolith-417321.firebaseapp.com',
+    databaseURL: 'https://crypto-monolith-417321-default-rtdb.firebaseio.com',
+    storageBucket: 'crypto-monolith-417321.appspot.com',
+    measurementId: 'G-GTZFR6D48D',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyDXsPaxbE1eKQzUK3Sdt_vgAznUenKA07M',
+    appId: '1:368645643837:ios:259eeb31aac82760965454',
+    messagingSenderId: '368645643837',
+    projectId: 'crypto-monolith-417321',
+    databaseURL: 'https://crypto-monolith-417321-default-rtdb.firebaseio.com',
+    storageBucket: 'crypto-monolith-417321.appspot.com',
+    iosBundleId: 'com.example.buPassport',
+  );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyDuaxN5z_6MxE0C6u-aVM0iA-lYVejmygo',
+    appId: '1:368645643837:web:c8ea8678917e5ca3965454',
+    messagingSenderId: '368645643837',
+    projectId: 'crypto-monolith-417321',
+    authDomain: 'crypto-monolith-417321.firebaseapp.com',
+    databaseURL: 'https://crypto-monolith-417321-default-rtdb.firebaseio.com',
+    storageBucket: 'crypto-monolith-417321.appspot.com',
+    measurementId: 'G-VH75CV0DK7',
+  );
+
 }
